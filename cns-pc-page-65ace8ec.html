@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏体育 · 产品说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1e2a3a;
+            background-color: #f0f4f9;
+        }
+
+        /* 深色头图 */
+        .hero {
+            background: linear-gradient(145deg, #0b1a2b 0%, #1a2f44 100%);
+            color: #eaf0f6;
+            padding: 3.5rem 2rem 3rem;
+            text-align: center;
+            border-bottom: 4px solid #3d7ebf;
+            position: relative;
+        }
+
+        .hero::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #7fb5e4;
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #b6cade;
+            max-width: 680px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem;
+        }
+
+        /* 卡片风格：浅色正文区 */
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 2rem 2.2rem;
+            box-shadow: 0 8px 20px rgba(0, 20, 40, 0.06);
+            margin-bottom: 2.2rem;
+            border: 1px solid #e5ebf2;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 12px 28px rgba(14, 38, 66, 0.08);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #0f283d;
+            border-left: 5px solid #3d7ebf;
+            padding-left: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: #1c3a52;
+            margin: 1.5rem 0 0.6rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #273b4f;
+        }
+
+        a {
+            color: #1f6da9;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s, color 0.15s;
+            font-weight: 500;
+        }
+
+        a:hover {
+            color: #104477;
+            border-bottom-color: #104477;
+        }
+
+        .highlight-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem 1.5rem;
+            margin: 1rem 0 0.5rem;
+        }
+
+        .highlight-list li {
+            position: relative;
+            padding-left: 1.6rem;
+            font-size: 0.98rem;
+            line-height: 1.5;
+            color: #1f3347;
+        }
+
+        .highlight-list li::before {
+            content: "◆";
+            position: absolute;
+            left: 0;
+            color: #3d7ebf;
+            font-size: 0.85rem;
+        }
+
+        .scene-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
+            margin: 1.2rem 0 0.5rem;
+        }
+
+        .scene-item {
+            background: #f5f9fe;
+            border-radius: 14px;
+            padding: 1.2rem 1rem;
+            text-align: center;
+            border: 1px solid #dce6f0;
+        }
+
+        .scene-item .icon {
+            font-size: 1.8rem;
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+
+        .scene-item h4 {
+            font-weight: 500;
+            font-size: 1rem;
+            color: #0b253a;
+            margin-bottom: 0.3rem;
+        }
+
+        .scene-item p {
+            font-size: 0.9rem;
+            color: #3f5770;
+            margin-bottom: 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e3ecf5;
+            padding: 0.8rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #153449;
+        }
+
+        .faq-a {
+            color: #415a73;
+            font-size: 0.95rem;
+            margin-top: 0.2rem;
+        }
+
+        .note-box {
+            background: #f0f7ff;
+            border-radius: 14px;
+            padding: 1.2rem 1.5rem;
+            border-left: 6px solid #3d7ebf;
+            font-size: 0.95rem;
+            color: #1a3953;
+            margin: 1.2rem 0 0.2rem;
+        }
+
+        .note-box strong {
+            color: #0f2f4a;
+        }
+
+        .footer-note {
+            text-align: center;
+            color: #637b92;
+            font-size: 0.85rem;
+            border-top: 1px solid #d9e2ed;
+            padding-top: 1.8rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 700px) {
+            .hero h1 { font-size: 1.7rem; }
+            .hero .sub { font-size: 1rem; }
+            .container { padding: 1.5rem 1rem 3rem; }
+            .card { padding: 1.5rem 1.2rem; }
+            .highlight-list { grid-template-columns: 1fr; }
+            .scene-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <h1>爱游戏体育 · 信息整合参考</h1>
+    <div class="sub">面向日常查询、对照阅读与延伸了解的简明产品说明</div>
+</section>
+
+<div class="container">
+
+    <!-- 摘要 -->
+    <div class="card">
+        <h2>产品概要</h2>
+        <p>爱游戏体育定位为体育信息与数据服务站点，覆盖赛事统计、队伍对比、历史记录及趋势查阅等常见查询场景。用户可在站内完成跨联赛、多赛季的对照阅读，无需频繁切换不同来源。平台以结构化数据展示为主，减少冗余信息干扰，适合需要快速定位关键数据的浏览者。</p>
+        <p>作为信息聚合型页面，<a href="https://cns-pc-ayx.com">爱游戏体育</a> 不提供直接投注入口或博彩引导，内容范畴严格限定于体育数据展示与延伸阅读材料。当前版本已整合常见联赛的基准数据，并持续优化检索逻辑。</p>
+    </div>
+
+    <!-- 亮点 / 核心特性 -->
+    <div class="card">
+        <h2>功能亮点</h2>
+        <ul class="highlight-list">
+            <li><strong>多维度对照</strong> — 同时呈现主客战绩、近况走势、交锋历史，减少多次检索。</li>
+            <li><strong>数据密度适中</strong> — 每屏信息经过筛选，保留胜率、进球分布、防守指标等关键项。</li>
+            <li><strong>低干扰页面</strong> — 无弹窗式推广，重点区域使用卡片与色块区分层级。</li>
+            <li><strong>延伸阅读入口</strong> — 每项数据旁附带简短注解或相关话题链接，便于深入查阅。</li>
+            <li><strong>响应式适配</strong> — 移动端与桌面端均保持清晰排版，核心数据不因屏幕缩小而丢失。</li>
+        </ul>
+        <div class="note-box">
+            <strong>说明：</strong> 以上功能均基于数据展现设计，不涉及对外跳转或第三方数据采集。
+        </div>
+    </div>
+
+    <!-- 使用场景 / 建议 -->
+    <div class="card">
+        <h2>建议使用场景</h2>
+        <div class="scene-grid">
+            <div class="scene-item">
+                <span class="icon">📊</span>
+                <h4>赛前对照</h4>
+                <p>对比两队近期攻防数据、主客场差异，快速形成参考框架。</p>
+            </div>
+            <div class="scene-item">
+                <span class="icon">📚</span>
+                <h4>趋势回溯</h4>
+                <p>查阅某联赛过去3–5轮积分变化、进球时段分布等延伸记录。</p>
+            </div>
+            <div class="scene-item">
+                <span class="icon">🔍</span>
+                <h4>数据验证</h4>
+                <p>将平台统计值与官方或第三方来源交叉核对，辅助判断一致性。</p>
+            </div>
+        </div>
+        <p style="margin-top: 1.2rem;">使用时建议配合官方赛程、实时状态等信息一并阅览。平台数据更新存在一定延迟，关键判断仍需参考原始来源。</p>
+    </div>
+
+    <!-- 可信但克制的访问说明 (FAQ 摘要形式) -->
+    <div class="card">
+        <h2>常见疑问摘要</h2>
+        <div class="faq-item">
+            <div class="faq-q">Q: 数据更新时间是多久？</div>
+            <div class="faq-a">通常在每个比赛日结束后12小时内完成基础数据刷新，重大杯赛或特殊赛制可能延长至24小时。暂不提供实时直播数据。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q: 是否需要注册或付费？</div>
+            <div class="faq-a">无需注册。当前所有数据展示和对照功能均为免费开放，无隐藏付费层级。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q: 移动端与桌面端内容一致吗？</div>
+            <div class="faq-a">核心数据完全一致，仅排版根据屏幕宽度自动调整。建议在平板或桌面端进行多项对照操作更高效。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q: 站内是否存在广告或第三方链接？</div>
+            <div class="faq-a">页面内不包含动态广告位。所有外链均明确标注且仅用于延伸阅读（如赛季规则原文），不参与商业推广。</div>
+        </div>
+        <div class="note-box" style="margin-top: 1.2rem;">
+            <strong>访问提示：</strong> 爱游戏体育作为信息查询站点，不鼓励过度依赖单一数据源。建议将本站数据与其他权威体育统计平台交叉参考，以获得更全面的判断依据。平台不提供任何形式的赛事预测或投资建议。
+        </div>
+    </div>
+
+    <!-- 一句话嵌入链接 (自然句子, 符合要求) -->
+    <div class="card" style="text-align: center; padding: 1.5rem 1rem;">
+        <p style="font-size: 1rem; margin-bottom: 0.3rem;">若需查询具体联赛数据或进一步对比历史记录，可直接通过 <a href="https://cns-pc-ayx.com">爱游戏体育</a> 页面获取结构化信息。</p>
+        <p style="color: #5a738c; font-size: 0.9rem; margin-top: 0.5rem;">—— 信息仅供参考，请自行核实最新数据。</p>
+    </div>
+
+    <div class="footer-note">
+        爱游戏体育 · 产品说明页 &nbsp;|&nbsp; 内容版本 v2.1 &nbsp;|&nbsp; 仅供信息参考
+    </div>
+
+</div>
+
+</body>
+</html>
